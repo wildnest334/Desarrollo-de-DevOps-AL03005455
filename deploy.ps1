@@ -16,6 +16,6 @@ git commit -m "$mensaje"
 git push origin main
 
 # Desplegar a S3
-aws s3 sync . s3://devops-ariel-3005455-web --delete
+aws s3 sync . s3://devops-ariel-3005455-web --exclude ".git/*" --exclude "deploy.ps1" --delete
 
 Write-Host "Despliegue completado 🚀" -ForegroundColor Green
